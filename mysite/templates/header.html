@@ -3,15 +3,15 @@
     <nav class="navbar navbar-default" role="navigation">
         <div class="navbar-header">
             <a class="navbar-brand" href="http.itdiffer.com">
-                <img src="{% static '/images/123.png' %}" width = "100px">
+                <img src="{% static '/images/123.png' %}" width = "60px">
             </a>
         </div>
         <div>
             <ul class="nav navbar-nav" role="navigation">
                 <li><a href="{% url 'blog:blog_title' %}">BLOG</a></li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">LOGIN</a></li>
+            <ul class="nav navbar-nav navbar-right" >
+                <li><a href="{% url 'account:user_login' %}">LOGIN</a></li>
             </ul>
         </div>
     </nav>
