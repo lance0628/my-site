@@ -2,17 +2,28 @@
 <div class="container">
     <nav class="navbar navbar-default" role="navigation">
         <div class="navbar-header">
-            <a class="navbar-brand" href="http.itdiffer.com">
-                <img src="{% static '/images/123.png' %}" width = "60px">
+            <a class= "navbar-brand" href="http://www.itdiffer.com">
+                <img src="{% static '/images/logo.svg' %}" width="100px">
             </a>
+            
         </div>
         <div>
             <ul class="nav navbar-nav" role="navigation">
                 <li><a href="{% url 'blog:blog_title' %}">BLOG</a></li>
             </ul>
-            <ul class="nav navbar-nav navbar-right" >
-                <li><a href="{% url 'account:user_login' %}">LOGIN</a></li>
+            <ul class="nav navbar-nav navbar-right" style="margin-right:10px">
+                {% if user.is_authenticated %}
+                <li><a href="#">{{ user.username }}</a></li>
+                <li><a href="{% url 'account:user_logout' %}">Logout</a></li>
+                {% else %}
+                <li><a href="{% url 'account:user_login' %}">LOGIN</a>  
+                </li>
+                {% endif %}
+            <ul class="nav navbar-nav navbar-right" style="margin-right:10px">
+                <li><a href="{% url 'account:user_register' %}">REGISTER</a>  
+                </li>
             </ul>
         </div>
+        
     </nav>
 </div>

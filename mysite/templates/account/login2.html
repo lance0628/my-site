@@ -15,18 +15,19 @@
     <p>Input your username and password</p>
     <form class="from-horizontal" action="{% url 'account:user_login' %}"method="post">
 {% csrf_token %}
-    <div class="form-group">
+    <div class="form-group" >
         <label for="{{ form.username.id_for_label }}" class="col-md-5 control-label" style="color:red">
             <span class="glyphicon glyphicon-user"></span>Username:</label>  <div class="col-md-6 text-left">{{form.username}}</div>
     </div>
-    <div class="form-group">
+    <div class="form-group" >
         <label for="{{ form.password.id_for_label }}" class="col-md-5 control-label" style="color:purple">
             <span class="glyphicon glyphicon-floppy-disk"></span>Password:</label>
             <div class="col-md-6 text-left">{{ form.password }}
             </div>
     </div>
-
-    <input type="submit" class="btn btn-primary btn-lg" value="Login">
+    <div style="margin:50px auto; width:100px; position: relative; top:20px">
+        <input type="submit" class="btn btn-primary btn-lg" value="Login">
+    </div>
     </form>
 </div>
 {% endblock %}
